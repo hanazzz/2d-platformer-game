@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://rukhcfl4rwli"]
+[gd_scene load_steps=18 format=3 uid="uid://rukhcfl4rwli"]
 
 [ext_resource type="Script" uid="uid://6382eyvu3rmh" path="res://scenes/menu/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://bk737hwrium3" path="res://assets/menu/bg_main_menu.png" id="2_wu84c"]
@@ -63,10 +63,13 @@ region = Rect2(16, 144, 16, 16)
 atlas = ExtResource("5_hj162")
 region = Rect2(96, 64, 16, 16)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xn6kt"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_bqqt6")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="BgImage" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -158,51 +161,33 @@ text = "Exit"
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 64.0
-offset_top = 68.0
-offset_right = 208.0
-offset_bottom = 268.0
+offset_left = 48.0
+offset_top = 44.0
+offset_right = 216.0
+offset_bottom = 285.33337
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_hj162")
 
-[node name="ControlTextContainer" type="VBoxContainer" parent="InstructionPanel"]
-visible = false
+[node name="Control Container" type="VBoxContainer" parent="InstructionPanel"]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 56.0
-offset_top = -84.0
-offset_right = 121.0
-offset_bottom = 84.0
+offset_left = -68.0
+offset_top = -100.0
+offset_right = 68.0
+offset_bottom = 100.0
+grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 18
 
-[node name="ControlImagesContainer" type="VBoxContainer" parent="InstructionPanel"]
-visible = false
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 24.0
-offset_top = -84.0
-offset_right = 48.0
-offset_bottom = 84.0
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="InstructionPanel"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 128.0
-offset_bottom = 184.0
-theme_override_constants/separation = 19
-
-[node name="LeftContainer" type="HBoxContainer" parent="InstructionPanel/VBoxContainer"]
+[node name="LeftContainer" type="HBoxContainer" parent="InstructionPanel/Control Container"]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="LeftArrow" type="TextureRect" parent="InstructionPanel/VBoxContainer/LeftContainer"]
+[node name="LeftArrow" type="TextureRect" parent="InstructionPanel/Control Container/LeftContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -210,7 +195,7 @@ size_flags_vertical = 3
 texture = SubResource("AtlasTexture_xn6kt")
 stretch_mode = 4
 
-[node name="Left" type="Label" parent="InstructionPanel/VBoxContainer/LeftContainer"]
+[node name="Left" type="Label" parent="InstructionPanel/Control Container/LeftContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -220,10 +205,11 @@ theme_override_font_sizes/font_size = 26
 text = "Left"
 vertical_alignment = 1
 
-[node name="RightContainer" type="HBoxContainer" parent="InstructionPanel/VBoxContainer"]
+[node name="RightContainer" type="HBoxContainer" parent="InstructionPanel/Control Container"]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Right Arrow" type="TextureRect" parent="InstructionPanel/VBoxContainer/RightContainer"]
+[node name="Right Arrow" type="TextureRect" parent="InstructionPanel/Control Container/RightContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -231,20 +217,21 @@ size_flags_vertical = 3
 texture = SubResource("AtlasTexture_qgo02")
 stretch_mode = 4
 
-[node name="Right" type="Label" parent="InstructionPanel/VBoxContainer/RightContainer"]
+[node name="Right" type="Label" parent="InstructionPanel/Control Container/RightContainer"]
 texture_filter = 1
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("5_8ln24")
 theme_override_font_sizes/font_size = 26
 text = "Right"
 vertical_alignment = 1
 
-[node name="JumpContainer" type="HBoxContainer" parent="InstructionPanel/VBoxContainer"]
+[node name="JumpContainer" type="HBoxContainer" parent="InstructionPanel/Control Container"]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="UpArrow" type="TextureRect" parent="InstructionPanel/VBoxContainer/JumpContainer"]
+[node name="UpArrow" type="TextureRect" parent="InstructionPanel/Control Container/JumpContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -252,20 +239,21 @@ size_flags_vertical = 3
 texture = SubResource("AtlasTexture_isoef")
 stretch_mode = 4
 
-[node name="Jump" type="Label" parent="InstructionPanel/VBoxContainer/JumpContainer"]
+[node name="Jump" type="Label" parent="InstructionPanel/Control Container/JumpContainer"]
 texture_filter = 1
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("5_8ln24")
 theme_override_font_sizes/font_size = 26
 text = "Jump"
 vertical_alignment = 1
 
-[node name="PauseContainer" type="HBoxContainer" parent="InstructionPanel/VBoxContainer"]
+[node name="PauseContainer" type="HBoxContainer" parent="InstructionPanel/Control Container"]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Esc" type="TextureRect" parent="InstructionPanel/VBoxContainer/PauseContainer"]
+[node name="Esc" type="TextureRect" parent="InstructionPanel/Control Container/PauseContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -273,14 +261,43 @@ size_flags_vertical = 3
 texture = SubResource("AtlasTexture_vovv2")
 stretch_mode = 4
 
-[node name="Pause" type="Label" parent="InstructionPanel/VBoxContainer/PauseContainer"]
+[node name="Pause" type="Label" parent="InstructionPanel/Control Container/PauseContainer"]
 texture_filter = 1
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("5_8ln24")
 theme_override_font_sizes/font_size = 26
 text = "Pause"
+vertical_alignment = 1
+
+[node name="GoodbyePanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xn6kt")
+
+[node name="GoodbyeText" type="Label" parent="GoodbyePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -156.0
+offset_right = 296.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 96
+text = "Goodbye :)"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="ButtonContainer/Level1" to="." method="_on_level_1_pressed"]

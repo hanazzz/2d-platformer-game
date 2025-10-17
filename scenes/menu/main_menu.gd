@@ -1,5 +1,6 @@
 extends Node
 
+@onready var goodbye_panel: Panel = %GoodbyePanel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _on_level_1_pressed() -> void:
 func _on_level_2_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/level2.tscn")
 
-# Called when Exit button is pressed and quits the game
+# Called when Exit button is pressed. Shows goodbye screen and quits the game
 func _on_exit_pressed() -> void:
+	goodbye_panel.show()
 	get_tree().quit()
