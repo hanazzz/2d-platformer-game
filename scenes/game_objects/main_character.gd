@@ -40,3 +40,9 @@ func _physics_process(delta: float) -> void:
 func jump():
 	# Send character veolcity upwards
 	velocity.y = JUMP_VELOCITY
+	
+	# Force character to jump/bounce away at a diagonal
+func jump_side(x):
+	# Send character veolcity upwards
+	velocity.y = JUMP_VELOCITY
+	velocity.x = x

@@ -11,12 +11,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# Called when player touches mushroom
+
+# Called when player touches enemy
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if (body.name == "CharacterBody2D"):
-		print("Touched enemy")
 		# Check for relative position of enemy and player
 		var y_delta = position.y - body.position.y
+		var x_delta = body.position.x - position.x
 		# If player touches enemy from above, destroy enemy
 		if y_delta > 30:
 			print("Destroy enemy")
@@ -24,7 +25,14 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			queue_free()
 			# Make player bounce
 			body.jump()
-		# If player touches enemy from anywhere else, player takes damage
+		# If player touches enemy from anywhere else, 
+		# player takes damage amd gets flung away
 		else:
 			print("Player takes damage")
+			# Decrease player health
 			game_manager.decrease_health()
+			# Make player bounce away
+			if x_delta > 0:
+				body.jump_side(500)
+			else:
+				body.jump_side(-500)
