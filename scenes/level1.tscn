@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d24iin8i7bqys"]
+[gd_scene load_steps=11 format=3 uid="uid://d24iin8i7bqys"]
 
 [ext_resource type="Texture2D" uid="uid://bblf1on51baqo" path="res://bg_green.png" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://0dlns3v7hide" path="res://Terrain (16x16).png" id="2_h2yge"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c0c7mmwrubhnu" path="res://game_manager.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://n7x3crpdp5um" path="res://scenes/finish.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://cc7qenpvtlvvh" path="res://scenes/level2.tscn" id="6_ejswk"]
+[ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://Jersey10-Regular.ttf" id="8_bbk5w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("2_h2yge")
@@ -272,7 +273,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("8_bbk5w")
+theme_override_font_sizes/font_size = 42
 text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
