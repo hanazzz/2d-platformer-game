@@ -1,21 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://rukhcfl4rwli"]
+[gd_scene load_steps=5 format=3 uid="uid://rukhcfl4rwli"]
 
 [ext_resource type="Script" uid="uid://6382eyvu3rmh" path="res://scenes/main_menu.gd" id="1_bqqt6"]
-[ext_resource type="Texture2D" uid="uid://dswhe8vnjnrel" path="res://bg_brown.png" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://capthhebhmoqf" path="res://game_logo.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://bk737hwrium3" path="res://bg_main_menu.png" id="2_wu84c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ln24"]
+texture = ExtResource("2_wu84c")
+modulate_color = Color(0.4506483, 0.45064825, 0.4506485, 1)
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_bqqt6")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
+[node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ekxnf")
-stretch_mode = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_8ln24")
 
 [node name="GameLogo" type="TextureRect" parent="."]
 anchors_preset = 8
