@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d24iin8i7bqys"]
+[gd_scene load_steps=8 format=3 uid="uid://d24iin8i7bqys"]
 
 [ext_resource type="Texture2D" uid="uid://bblf1on51baqo" path="res://Green.png" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://0dlns3v7hide" path="res://Terrain (16x16).png" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://h02t0hsom8sh" path="res://scenes/main_character.tscn" id="3_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://dhkc7s21ngmpj" path="res://scenes/enemy_duck.tscn" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://pghoqeurj5n4" path="res://scenes/collectible_cherry.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://c0c7mmwrubhnu" path="res://game_manager.gd" id="6_7mycd"]
 
@@ -207,12 +206,6 @@ position = Vector2(44, 33)
 position = Vector2(20, 15)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("4_lquwl")]
-position = Vector2(952, -64)
-
-[node name="CharacterBody2D3" parent="." instance=ExtResource("4_lquwl")]
-position = Vector2(800, 456)
 
 [node name="Collectible" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(416, 432)
