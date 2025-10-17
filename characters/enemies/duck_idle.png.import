@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qeuhw4m6oytx"
-path="res://.godot/imported/Jump (36x36).png-6dd44b511adefbfef3b4d28f2a290088.ctex"
+uid="uid://dggdxx810epxi"
+path="res://.godot/imported/duck_idle.png-c88a34ddeff90d39decb374e3dad3db8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/Jump (36x36).png"
-dest_files=["res://.godot/imported/Jump (36x36).png-6dd44b511adefbfef3b4d28f2a290088.ctex"]
+source_file="res://characters/enemies/duck_idle.png"
+dest_files=["res://.godot/imported/duck_idle.png-c88a34ddeff90d39decb374e3dad3db8.ctex"]
 
 [params]
 

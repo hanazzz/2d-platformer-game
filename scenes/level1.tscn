@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d24iin8i7bqys"]
+[gd_scene load_steps=14 format=3 uid="uid://d24iin8i7bqys"]
 
 [ext_resource type="Texture2D" uid="uid://bblf1on51baqo" path="res://bg_green.png" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://0dlns3v7hide" path="res://Terrain (16x16).png" id="2_h2yge"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c0c7mmwrubhnu" path="res://game_manager.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://n7x3crpdp5um" path="res://scenes/finish.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://cc7qenpvtlvvh" path="res://scenes/level2.tscn" id="6_ejswk"]
+[ext_resource type="PackedScene" uid="uid://sbxq1xbti2sh" path="res://scenes/enemy_mushroom.tscn" id="7_d3jkd"]
 [ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://Jersey10-Regular.ttf" id="8_bbk5w"]
 [ext_resource type="Texture2D" uid="uid://04iomadu77a4" path="res://heart_health.png" id="9_conm7"]
 
@@ -257,6 +258,17 @@ position = Vector2(2264, 584)
 [node name="Finish" parent="SceneObjects" instance=ExtResource("6_272bh")]
 position = Vector2(2446, 583)
 target_level = ExtResource("6_ejswk")
+
+[node name="Enemies" type="Node" parent="SceneObjects"]
+
+[node name="EnemyMushroom" parent="SceneObjects/Enemies" instance=ExtResource("7_d3jkd")]
+position = Vector2(408, 92)
+
+[node name="EnemyMushroom2" parent="SceneObjects/Enemies" instance=ExtResource("7_d3jkd")]
+position = Vector2(549, 153)
+
+[node name="EnemyMushroom3" parent="SceneObjects/Enemies" instance=ExtResource("7_d3jkd")]
+position = Vector2(668, 344)
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
