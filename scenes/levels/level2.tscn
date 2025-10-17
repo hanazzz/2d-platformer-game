@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cc7qenpvtlvvh"]
+[gd_scene load_steps=21 format=3 uid="uid://cc7qenpvtlvvh"]
 
 [ext_resource type="Texture2D" uid="uid://flv84x01kodo" path="res://assets/backgrounds/bg_purple.png" id="1_oyk6k"]
 [ext_resource type="Texture2D" uid="uid://0dlns3v7hide" path="res://assets/terrain/Terrain (16x16).png" id="2_gycjm"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://l00pnkmdjo74" path="res://scenes/game_objects/fall_area.gd" id="8_sqrei"]
 [ext_resource type="Script" uid="uid://c0c7mmwrubhnu" path="res://scenes/levels/game_manager.gd" id="9_yhrca"]
 [ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://assets/menu/Jersey10-Regular.ttf" id="10_4eecq"]
+[ext_resource type="Script" uid="uid://ct47vjmb45rhm" path="res://scenes/levels/pause.gd" id="11_8i1lk"]
+[ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://assets/menu/PixelOperator-Bold.ttf" id="12_hgky1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("2_gycjm")
@@ -223,6 +225,36 @@ sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_76toy"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4tpv"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkuam"]
+bg_color = Color(0.14044744, 0.14044744, 0.14044744, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3b2k"]
+bg_color = Color(0.88235295, 0.88235295, 0.88235295, 0.8627451)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sqrei"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhrca"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [node name="Node" type="Node"]
 
 [node name="SceneObjects" type="Node" parent="."]
@@ -315,4 +347,79 @@ text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Pause" type="Node" parent="UI"]
+script = ExtResource("11_8i1lk")
+
+[node name="PauseMenu" type="Panel" parent="UI/Pause"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GamePaused" type="Label" parent="UI/Pause/PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -202.5
+offset_top = 80.0
+offset_right = 202.5
+offset_bottom = 159.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("12_hgky1")
+theme_override_font_sizes/font_size = 112
+text = "GAME PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Pause/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.125
+offset_top = -52.0
+offset_right = 191.125
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Resume" type="Button" parent="UI/Pause/PauseMenu/VBoxContainer"]
+process_mode = 3
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.056291595, 0.056291595, 0.05629161, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_hgky1")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_b4tpv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hkuam")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f3b2k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sqrei")
+text = "Resume"
+
+[node name="ExitToMenu" type="Button" parent="UI/Pause/PauseMenu/VBoxContainer"]
+process_mode = 3
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.056291595, 0.056291595, 0.05629161, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_hgky1")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_yhrca")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hkuam")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f3b2k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sqrei")
+text = "Exit to Main Menu"
+
 [connection signal="body_entered" from="SceneObjects/FallArea" to="SceneObjects/FallArea" method="_on_body_entered"]
+[connection signal="pressed" from="UI/Pause/PauseMenu/VBoxContainer/Resume" to="UI/Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/Pause/PauseMenu/VBoxContainer/ExitToMenu" to="UI/Pause" method="_on_exit_to_menu_pressed"]
