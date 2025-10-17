@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://rukhcfl4rwli"]
+[gd_scene load_steps=12 format=3 uid="uid://rukhcfl4rwli"]
 
 [ext_resource type="Script" uid="uid://6382eyvu3rmh" path="res://scenes/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://capthhebhmoqf" path="res://game_logo.png" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://bk737hwrium3" path="res://bg_main_menu.png" id="2_wu84c"]
 [ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://Jersey10-Regular.ttf" id="4_wu84c"]
+[ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://PixelOperator-Bold.ttf" id="5_8ln24"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ln24"]
 texture = ExtResource("2_wu84c")
@@ -104,12 +105,13 @@ grow_vertical = 2
 theme_override_constants/separation = 24
 
 [node name="Level1" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.056291595, 0.056291595, 0.05629161, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_wu84c")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 46
 theme_override_styles/normal = SubResource("StyleBoxFlat_tbmy8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wu84c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rtw2f")
@@ -117,12 +119,13 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
 text = "Level 1"
 
 [node name="Level2" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.056291595, 0.056291595, 0.05629161, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_wu84c")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 46
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wu84c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rtw2f")
@@ -130,12 +133,13 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
 text = "Level 2"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.056291595, 0.056291595, 0.05629161, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_wu84c")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 46
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wu84c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rtw2f")
