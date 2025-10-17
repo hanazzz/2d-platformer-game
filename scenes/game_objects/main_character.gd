@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -900.0
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
 
+
 func _physics_process(delta: float) -> void:
 	# Animations
 	if (velocity.x > 1 || velocity.x < -1):
@@ -34,3 +35,8 @@ func _physics_process(delta: float) -> void:
 	
 	var isLeft = velocity.x < 0
 	sprite_2d.flip_h = isLeft
+
+# Force character to jump/bounce up
+func jump():
+	# Send character veolcity upwards
+	velocity.y = JUMP_VELOCITY

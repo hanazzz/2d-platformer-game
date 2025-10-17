@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
 # When player touches finish item, advances to next scene
 func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "CharacterBody2D"):
-#		Target scene identified on Finish node for current level
+		# Target scene identified on Finish node for current level
 		get_tree().change_scene_to_packed(target_level)
