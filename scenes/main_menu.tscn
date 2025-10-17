@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://rukhcfl4rwli"]
+[gd_scene load_steps=11 format=3 uid="uid://rukhcfl4rwli"]
 
 [ext_resource type="Script" uid="uid://6382eyvu3rmh" path="res://scenes/main_menu.gd" id="1_bqqt6"]
-[ext_resource type="Texture2D" uid="uid://capthhebhmoqf" path="res://game_logo.png" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://bk737hwrium3" path="res://bg_main_menu.png" id="2_wu84c"]
 [ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://Jersey10-Regular.ttf" id="4_wu84c"]
 [ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://PixelOperator-Bold.ttf" id="5_8ln24"]
@@ -50,21 +49,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8ln24")
-
-[node name="GameLogo" type="TextureRect" parent="."]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -384.0
-offset_top = -148.0
-offset_right = 386.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_bqqt6")
 
 [node name="GameTitle" type="Label" parent="."]
 texture_filter = 1

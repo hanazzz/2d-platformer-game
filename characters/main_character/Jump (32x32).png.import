@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1i53dybglrkq"
-path="res://.godot/imported/Run (32x32).png-448439aeb8095dde0c51c1fbc2bea5a9.ctex"
+uid="uid://bu8y3qv10a3l3"
+path="res://.godot/imported/Jump (32x32).png-6d03dc429bae81d5d4cfe1df97986ad6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Run (32x32).png"
-dest_files=["res://.godot/imported/Run (32x32).png-448439aeb8095dde0c51c1fbc2bea5a9.ctex"]
+source_file="res://characters/main_character/Jump (32x32).png"
+dest_files=["res://.godot/imported/Jump (32x32).png-6d03dc429bae81d5d4cfe1df97986ad6.ctex"]
 
 [params]
 
