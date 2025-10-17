@@ -221,3 +221,6 @@ position = Vector2(760, 336)
 
 [node name="Collectible3" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(968, 248)
+
+[node name="Collectible4" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(568, 352)

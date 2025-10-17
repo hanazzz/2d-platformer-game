@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://pghoqeurj5n4"]
+[gd_scene load_steps=22 format=3 uid="uid://pghoqeurj5n4"]
 
+[ext_resource type="Script" uid="uid://dqb6mxi3ysggs" path="res://scenes/collectible_cherry.gd" id="1_7uqre"]
 [ext_resource type="Texture2D" uid="uid://2dj26c4pqhv1" path="res://Cherries.png" id="1_tajht"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7uqre"]
@@ -133,6 +134,7 @@ animations = [{
 radius = 17.888544
 
 [node name="Collectible" type="Area2D"]
+script = ExtResource("1_7uqre")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -145,3 +147,5 @@ frame_progress = 0.046862345
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(15, 17)
 shape = SubResource("CircleShape2D_e57wr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
