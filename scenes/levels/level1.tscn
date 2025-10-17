@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d24iin8i7bqys"]
+[gd_scene load_steps=27 format=3 uid="uid://d24iin8i7bqys"]
 
 [ext_resource type="Texture2D" uid="uid://bblf1on51baqo" path="res://assets/backgrounds/bg_green.png" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://0dlns3v7hide" path="res://assets/terrain/Terrain (16x16).png" id="2_h2yge"]
@@ -186,9 +186,33 @@ texture = ExtResource("2_h2yge")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bbk5w")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps2vj"]
+atlas = ExtResource("9_conm7")
+region = Rect2(0, 32, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbmf2"]
+atlas = ExtResource("9_conm7")
+region = Rect2(0, 16, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xax6"]
+atlas = ExtResource("9_conm7")
+region = Rect2(0, 0, 24, 8)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3jkd"]
 atlas = ExtResource("9_conm7")
 region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfihu"]
+atlas = ExtResource("9_conm7")
+region = Rect2(16, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgguw"]
+atlas = ExtResource("9_conm7")
+region = Rect2(16, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jprdt"]
+atlas = ExtResource("9_conm7")
+region = Rect2(16, 16, 8, 8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfihu"]
 bg_color = Color(1, 1, 1, 1)
@@ -302,9 +326,10 @@ position = Vector2(2264, 584)
 position = Vector2(2446, 583)
 target_level = ExtResource("6_ejswk")
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
 unique_name_in_owner = true
 script = ExtResource("6_7mycd")
+hearts = [NodePath("../UI/HeartsPanel/Heart1"), NodePath("../UI/HeartsPanel/Heart2"), NodePath("../UI/HeartsPanel/Heart3")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -332,13 +357,103 @@ vertical_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
+offset_left = -176.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 88.0
+grow_horizontal = 0
+
+[node name="Heart1" type="TextureRect" parent="UI/HeartsPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -20.5
+offset_right = 60.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ps2vj")
+stretch_mode = 4
+
+[node name="Heart2" type="TextureRect" parent="UI/HeartsPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -20.5
+offset_right = 60.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_sbmf2")
+stretch_mode = 4
+
+[node name="Heart3" type="TextureRect" parent="UI/HeartsPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -20.5
+offset_right = 60.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_1xax6")
+stretch_mode = 4
+
+[node name="HeartsPanelOLD" type="Panel" parent="UI"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
 offset_left = -208.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = 88.0
 grow_horizontal = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/HeartsPanel"]
+[node name="FullHeartContainer" type="HBoxContainer" parent="UI/HeartsPanelOLD"]
+visible = false
+layout_mode = 1
+offset_top = 15.0
+offset_right = 192.0
+offset_bottom = 56.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Heart1" type="TextureRect" parent="UI/HeartsPanelOLD/FullHeartContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_d3jkd")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="UI/HeartsPanelOLD/FullHeartContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_d3jkd")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="UI/HeartsPanelOLD/FullHeartContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_d3jkd")
+expand_mode = 2
+
+[node name="EmptyHeartContainer" type="HBoxContainer" parent="UI/HeartsPanelOLD"]
+visible = false
 layout_mode = 0
 offset_top = 15.0
 offset_right = 192.0
@@ -346,22 +461,22 @@ offset_bottom = 56.0
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Heart1" type="TextureRect" parent="UI/HeartsPanel/HBoxContainer"]
+[node name="EmptyHeart1" type="TextureRect" parent="UI/HeartsPanelOLD/EmptyHeartContainer"]
 texture_filter = 1
 layout_mode = 2
-texture = SubResource("AtlasTexture_d3jkd")
+texture = SubResource("AtlasTexture_nfihu")
 expand_mode = 2
 
-[node name="Heart2" type="TextureRect" parent="UI/HeartsPanel/HBoxContainer"]
+[node name="EmptyHeart2" type="TextureRect" parent="UI/HeartsPanelOLD/EmptyHeartContainer"]
 texture_filter = 1
 layout_mode = 2
-texture = SubResource("AtlasTexture_d3jkd")
+texture = SubResource("AtlasTexture_lgguw")
 expand_mode = 2
 
-[node name="Heart3" type="TextureRect" parent="UI/HeartsPanel/HBoxContainer"]
+[node name="EmptyHeart3" type="TextureRect" parent="UI/HeartsPanelOLD/EmptyHeartContainer"]
 texture_filter = 1
 layout_mode = 2
-texture = SubResource("AtlasTexture_d3jkd")
+texture = SubResource("AtlasTexture_jprdt")
 expand_mode = 2
 
 [node name="Pause" type="Node" parent="UI"]

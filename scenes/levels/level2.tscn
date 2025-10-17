@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cc7qenpvtlvvh"]
+[gd_scene load_steps=26 format=3 uid="uid://cc7qenpvtlvvh"]
 
 [ext_resource type="Texture2D" uid="uid://flv84x01kodo" path="res://assets/backgrounds/bg_purple.png" id="1_oyk6k"]
 [ext_resource type="Texture2D" uid="uid://0dlns3v7hide" path="res://assets/terrain/Terrain (16x16).png" id="2_gycjm"]
@@ -13,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://assets/menu/Jersey10-Regular.ttf" id="10_4eecq"]
 [ext_resource type="Script" uid="uid://ct47vjmb45rhm" path="res://scenes/levels/pause.gd" id="11_8i1lk"]
 [ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://assets/menu/PixelOperator-Bold.ttf" id="12_hgky1"]
+[ext_resource type="Texture2D" uid="uid://04iomadu77a4" path="res://assets/game_elements/heart_health.png" id="14_b4tpv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("2_gycjm")
@@ -256,6 +257,18 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkuam"]
+atlas = ExtResource("14_b4tpv")
+region = Rect2(0, 32, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3b2k"]
+atlas = ExtResource("14_b4tpv")
+region = Rect2(0, 16, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqrei"]
+atlas = ExtResource("14_b4tpv")
+region = Rect2(0, 0, 24, 8)
+
 [node name="Node" type="Node"]
 
 [node name="SceneObjects" type="Node" parent="."]
@@ -333,9 +346,10 @@ script = ExtResource("8_sqrei")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/FallArea"]
 shape = SubResource("WorldBoundaryShape2D_76toy")
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
 unique_name_in_owner = true
 script = ExtResource("9_yhrca")
+hearts = [NodePath("../UI/HeartsPanel/Heart1"), NodePath("../UI/HeartsPanel/Heart2"), NodePath("../UI/HeartsPanel/Heart3")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -431,6 +445,67 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hkuam")
 theme_override_styles/hover = SubResource("StyleBoxFlat_f3b2k")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_sqrei")
 text = "Exit to Main Menu"
+
+[node name="HeartsPanel" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -176.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 88.0
+grow_horizontal = 0
+
+[node name="Heart1" type="TextureRect" parent="UI/HeartsPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -20.5
+offset_right = 60.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_hkuam")
+stretch_mode = 4
+
+[node name="Heart2" type="TextureRect" parent="UI/HeartsPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -20.5
+offset_right = 60.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_f3b2k")
+stretch_mode = 4
+
+[node name="Heart3" type="TextureRect" parent="UI/HeartsPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -20.5
+offset_right = 60.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_sqrei")
+stretch_mode = 4
 
 [connection signal="body_entered" from="SceneObjects/FallArea" to="SceneObjects/FallArea" method="_on_body_entered"]
 [connection signal="pressed" from="UI/Pause/PauseMenu/VBoxContainer/Resume" to="UI/Pause" method="_on_resume_pressed"]
