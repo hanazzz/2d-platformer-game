@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cc7qenpvtlvvh"]
+[gd_scene load_steps=22 format=3 uid="uid://cc7qenpvtlvvh"]
 
 [ext_resource type="Texture2D" uid="uid://flv84x01kodo" path="res://assets/backgrounds/bg_purple.png" id="1_oyk6k"]
 [ext_resource type="Texture2D" uid="uid://0dlns3v7hide" path="res://assets/terrain/Terrain (16x16).png" id="2_gycjm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://n7x3crpdp5um" path="res://scenes/game_objects/finish.tscn" id="6_hkuam"]
 [ext_resource type="PackedScene" uid="uid://rukhcfl4rwli" path="res://scenes/menu/main_menu.tscn" id="7_f3b2k"]
 [ext_resource type="Script" uid="uid://l00pnkmdjo74" path="res://scenes/game_objects/fall_area.gd" id="8_sqrei"]
+[ext_resource type="PackedScene" uid="uid://dhkc7s21ngmpj" path="res://scenes/game_objects/enemy_duck.tscn" id="9_hgky1"]
 [ext_resource type="Script" uid="uid://c0c7mmwrubhnu" path="res://scenes/levels/game_manager.gd" id="9_yhrca"]
 [ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://assets/menu/Jersey10-Regular.ttf" id="10_4eecq"]
 [ext_resource type="Script" uid="uid://ct47vjmb45rhm" path="res://scenes/levels/pause.gd" id="11_8i1lk"]
@@ -285,6 +286,17 @@ position = Vector2(20, 15)
 zoom = Vector2(0.9, 0.9)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
+
+[node name="EnemiesGroup" type="Node" parent="SceneObjects"]
+
+[node name="EnemyDuck" parent="SceneObjects/EnemiesGroup" instance=ExtResource("9_hgky1")]
+position = Vector2(664, 232)
+
+[node name="EnemyDuck2" parent="SceneObjects/EnemiesGroup" instance=ExtResource("9_hgky1")]
+position = Vector2(848, 88)
+
+[node name="EnemyDuck3" parent="SceneObjects/EnemiesGroup" instance=ExtResource("9_hgky1")]
+position = Vector2(912, 472)
 
 [node name="CollectiblesGroup" type="Node" parent="SceneObjects"]
 

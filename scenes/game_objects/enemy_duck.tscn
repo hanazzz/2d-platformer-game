@@ -1,19 +1,114 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhkc7s21ngmpj"]
+[gd_scene load_steps=16 format=3 uid="uid://dhkc7s21ngmpj"]
 
-[ext_resource type="Texture2D" uid="uid://qeuhw4m6oytx" path="res://assets/characters/enemies/duck_jump.png" id="1_dqmn6"]
+[ext_resource type="Texture2D" uid="uid://dggdxx810epxi" path="res://assets/characters/enemies/duck_idle.png" id="1_axnyx"]
+[ext_resource type="Script" uid="uid://d3fjsn01b01ra" path="res://scenes/game_objects/enemy.gd" id="1_ekrm6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekrm6"]
+atlas = ExtResource("1_axnyx")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dg3d"]
+atlas = ExtResource("1_axnyx")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3rkm"]
+atlas = ExtResource("1_axnyx")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpxgo"]
+atlas = ExtResource("1_axnyx")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jefs2"]
+atlas = ExtResource("1_axnyx")
+region = Rect2(144, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lncta"]
+atlas = ExtResource("1_axnyx")
+region = Rect2(180, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yag25"]
+atlas = ExtResource("1_axnyx")
+region = Rect2(216, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qhsk"]
+atlas = ExtResource("1_axnyx")
+region = Rect2(252, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk517"]
+atlas = ExtResource("1_axnyx")
+region = Rect2(288, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flcpi"]
+atlas = ExtResource("1_axnyx")
+region = Rect2(324, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14veg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekrm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dg3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3rkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpxgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jefs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lncta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yag25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qhsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk517")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flcpi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_272bh"]
-radius = 21.0
-height = 48.0
+radius = 25.0
+height = 50.0
 
-[node name="CharacterBody2D2" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_axnyx"]
+radius = 27.0
+height = 54.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="EnemyDuck" type="RigidBody2D"]
+script = ExtResource("1_ekrm6")
+
+[node name="Animated" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(168, 96)
+position = Vector2(29, 29)
 scale = Vector2(1.6111112, 1.6111112)
-texture = ExtResource("1_dqmn6")
+sprite_frames = SubResource("SpriteFrames_14veg")
+autoplay = "default"
+frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(169, 92)
+position = Vector2(29, 32)
 shape = SubResource("CapsuleShape2D_272bh")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(29, 32)
+
+[node name="AttackCollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_axnyx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

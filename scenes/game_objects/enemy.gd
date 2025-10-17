@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+@onready var game_manager: Node = %GameManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +14,7 @@ func _process(delta: float) -> void:
 # Called when player touches mushroom
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if (body.name == "CharacterBody2D"):
+		print("Touched enemy")
 		# Check for relative position of enemy and player
 		var y_delta = position.y - body.position.y
 		# If player touches enemy from above, destroy enemy
@@ -25,6 +27,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		# If player touches enemy from anywhere else, player takes damage
 		else:
 			print("Player takes damage")
-			# Remove player
-			body.queue_free()
-			# TODO: Change so that player loses one health heart instead of removing player entirely.
+			game_manager.decrease_health()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://sbxq1xbti2sh"]
 
 [ext_resource type="Texture2D" uid="uid://cqoi6lxekfj2v" path="res://assets/characters/enemies/mushroom_idle.png" id="1_bmlcj"]
-[ext_resource type="Script" uid="uid://d3fjsn01b01ra" path="res://scenes/game_objects/enemy_mushroom.gd" id="1_bnqwj"]
+[ext_resource type="Script" uid="uid://d3fjsn01b01ra" path="res://scenes/game_objects/enemy.gd" id="1_bnqwj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u3awl"]
 atlas = ExtResource("1_bmlcj")
@@ -106,7 +106,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 22.0
+"speed": 20.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mq0oc"]
@@ -126,6 +126,7 @@ position = Vector2(12, 12)
 scale = Vector2(1.7, 1.7)
 sprite_frames = SubResource("SpriteFrames_3oqy1")
 autoplay = "default"
+frame_progress = 0.44096366
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, 23)
