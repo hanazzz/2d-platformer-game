@@ -55,3 +55,4 @@ jump={
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.10374347, 0.103743546, 0.103743516, 1)

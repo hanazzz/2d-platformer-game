@@ -201,6 +201,11 @@ layer_0/tile_data = PackedInt32Array(196608, 393216, 8, 262144, 393216, 9, 32768
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_1bvp3")]
 position = Vector2(44, 33)
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(20, 15)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
 [node name="CharacterBody2D2" parent="." instance=ExtResource("4_lquwl")]
 position = Vector2(952, -64)
 
