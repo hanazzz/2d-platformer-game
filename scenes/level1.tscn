@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d24iin8i7bqys"]
+[gd_scene load_steps=10 format=3 uid="uid://d24iin8i7bqys"]
 
 [ext_resource type="Texture2D" uid="uid://bblf1on51baqo" path="res://bg_green.png" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://0dlns3v7hide" path="res://Terrain (16x16).png" id="2_h2yge"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://pghoqeurj5n4" path="res://scenes/collectible_cherry.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://c0c7mmwrubhnu" path="res://game_manager.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://n7x3crpdp5um" path="res://scenes/finish.tscn" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://cc7qenpvtlvvh" path="res://scenes/level2.tscn" id="6_ejswk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("2_h2yge")
@@ -248,6 +249,7 @@ position = Vector2(2264, 584)
 
 [node name="Finish" parent="SceneObjects" instance=ExtResource("6_272bh")]
 position = Vector2(2446, 583)
+target_level = ExtResource("6_ejswk")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
