@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://sbxq1xbti2sh"]
+[gd_scene load_steps=26 format=3 uid="uid://sbxq1xbti2sh"]
 
 [ext_resource type="Texture2D" uid="uid://cqoi6lxekfj2v" path="res://assets/characters/enemies/mushroom_idle.png" id="1_bmlcj"]
 [ext_resource type="Script" uid="uid://d3fjsn01b01ra" path="res://scenes/game_objects/enemy.gd" id="1_bnqwj"]
+[ext_resource type="Texture2D" uid="uid://b38so5c5j5qqr" path="res://assets/characters/enemies/mushroom_hit.png" id="3_arb6b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u3awl"]
 atlas = ExtResource("1_bmlcj")
@@ -59,6 +60,26 @@ region = Rect2(384, 0, 32, 32)
 atlas = ExtResource("1_bmlcj")
 region = Rect2(416, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgajx"]
+atlas = ExtResource("3_arb6b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aaig"]
+atlas = ExtResource("3_arb6b")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg1s1"]
+atlas = ExtResource("3_arb6b")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq3e0"]
+atlas = ExtResource("3_arb6b")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgkb2"]
+atlas = ExtResource("3_arb6b")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_3oqy1"]
 animations = [{
 "frames": [{
@@ -107,6 +128,26 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgajx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aaig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg1s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq3e0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgkb2")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 22.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mq0oc"]
@@ -125,8 +166,10 @@ texture_filter = 1
 position = Vector2(12, 12)
 scale = Vector2(1.7, 1.7)
 sprite_frames = SubResource("SpriteFrames_3oqy1")
+animation = &"hit"
 autoplay = "default"
-frame_progress = 0.44096366
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, 23)
