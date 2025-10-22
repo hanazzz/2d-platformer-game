@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://bc0ov82y5aeda"]
 
-[ext_resource type="Script" uid="uid://dqb6mxi3ysggs" path="res://scenes/game_objects/collectible_cherry.gd" id="1_461nl"]
+[ext_resource type="Script" uid="uid://dqb6mxi3ysggs" path="res://scenes/game_objects/collectible.gd" id="1_461nl"]
 [ext_resource type="Texture2D" uid="uid://h201mq8d0uoa" path="res://assets/game_elements/collectibles_melon.png" id="2_461nl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2nyk"]
