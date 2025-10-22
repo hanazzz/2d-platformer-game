@@ -9,6 +9,7 @@ var jump_count = 0
 
 
 func _physics_process(delta: float) -> void:
+	# Behavior when character is on floor
 	if is_on_floor():
 		# Reset jump count when player on floor
 		jump_count = 0
@@ -19,9 +20,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			sprite_2d.animation = "default"
 	
-	
-	# Add the gravity when jumping or falling
+	# Behavior when character is jumping/falling
 	else:
+		# Add the gravity when jumping or falling
 		velocity += get_gravity() * delta
 		
 		# Fall animation
@@ -33,8 +34,6 @@ func _physics_process(delta: float) -> void:
 		# Double jump animation
 		else:
 			sprite_2d.animation = "double_jumping"
-			
-		
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and jump_count < 2:
@@ -61,8 +60,9 @@ func _physics_process(delta: float) -> void:
 func jump():
 	# Send character veolcity upwards
 	velocity.y = JUMP_VELOCITY
+	spawn_particle()
 	
-	# Force character to jump/bounce away at a diagonal
+# Force character to jump/bounce away at a diagonal
 func jump_side(x):
 	# Send character veolcity upwards
 	velocity.y = JUMP_VELOCITY

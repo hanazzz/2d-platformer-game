@@ -20,7 +20,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var x_delta = body.position.x - position.x
 		# If player touches enemy from above, destroy enemy
 		if y_delta > 30:
-			print("Destroy enemy")
 			# Remove enemy node
 			queue_free()
 			# Make player bounce
@@ -28,7 +27,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		# If player touches enemy from anywhere else, 
 		# player takes damage amd gets flung away
 		else:
-			print("Player takes damage")
 			# Decrease player health
 			game_manager.decrease_health()
 			# Make player bounce away
