@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cc7qenpvtlvvh"]
+[gd_scene load_steps=28 format=3 uid="uid://cc7qenpvtlvvh"]
 
 [ext_resource type="Texture2D" uid="uid://flv84x01kodo" path="res://assets/backgrounds/bg_purple.png" id="1_oyk6k"]
 [ext_resource type="Texture2D" uid="uid://d0pagpjc643n" path="res://assets/backgrounds/bg_pine_forest_parallax/bg_morning_layer6.png" id="1_sqrei"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c6s23fgjm8f7y" path="res://assets/backgrounds/bg_pine_forest_parallax/bg_morning_layer2.png" id="3_4eecq"]
 [ext_resource type="PackedScene" uid="uid://h02t0hsom8sh" path="res://scenes/game_objects/main_character.tscn" id="3_8i1lk"]
 [ext_resource type="PackedScene" uid="uid://bc0ov82y5aeda" path="res://scenes/game_objects/collectible_melon.tscn" id="4_hgky1"]
-[ext_resource type="Script" uid="uid://y47muba3yjgu" path="res://scenes/game_objects/collectible_melon.gd" id="5_b4tpv"]
 [ext_resource type="PackedScene" uid="uid://n7x3crpdp5um" path="res://scenes/game_objects/finish.tscn" id="6_hkuam"]
 [ext_resource type="PackedScene" uid="uid://rukhcfl4rwli" path="res://scenes/menu/main_menu.tscn" id="7_f3b2k"]
 [ext_resource type="Script" uid="uid://l00pnkmdjo74" path="res://scenes/game_objects/fall_area.gd" id="8_sqrei"]
@@ -373,7 +372,6 @@ position = Vector2(912, 472)
 
 [node name="Collectible1" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("4_hgky1")]
 position = Vector2(8, -8)
-script = ExtResource("5_b4tpv")
 
 [node name="Collectible2" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("4_hgky1")]
 position = Vector2(368, 432)

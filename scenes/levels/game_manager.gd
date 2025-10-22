@@ -18,7 +18,6 @@ func add_points():
 func decrease_health():
 	# Reduce lives by 1
 	lives -= 1
-	print("Lives left: ", lives)
 	for h in 3:
 		if h < lives:
 			hearts[h].show()
