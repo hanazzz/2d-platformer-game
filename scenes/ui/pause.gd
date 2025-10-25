@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Check if pause button pressed
 	var pause_pressed = Input.is_action_just_pressed("pause")
 	# If pressed, then show pause game and show pause menu
@@ -25,4 +25,4 @@ func _on_resume_pressed() -> void:
 
 func _on_exit_to_menu_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")

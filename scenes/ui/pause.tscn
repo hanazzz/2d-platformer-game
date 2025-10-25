@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bqf6qtnr51c0n"]
 
-[ext_resource type="Script" uid="uid://ct47vjmb45rhm" path="res://scenes/levels/pause.gd" id="1_685k6"]
-[ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://assets/menu/PixelOperator-Bold.ttf" id="2_2brvh"]
+[ext_resource type="Script" uid="uid://ct47vjmb45rhm" path="res://scenes/ui/pause.gd" id="1_685k6"]
+[ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://assets/ui/PixelOperator-Bold.ttf" id="2_2brvh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4tpv"]
 bg_color = Color(1, 1, 1, 1)

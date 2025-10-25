@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3k7i0ts1nrtf"
-path="res://.godot/imported/BlackButtons.png-80e6540d455c130bd78c31fa7e21d113.ctex"
+uid="uid://bk737hwrium3"
+path="res://.godot/imported/bg_main_menu.png-8eb2b8827e838c09e9e7a3c9b05e5615.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/BlackButtons.png"
-dest_files=["res://.godot/imported/BlackButtons.png-80e6540d455c130bd78c31fa7e21d113.ctex"]
+source_file="res://assets/ui/bg_main_menu.png"
+dest_files=["res://.godot/imported/bg_main_menu.png-8eb2b8827e838c09e9e7a3c9b05e5615.ctex"]
 
 [params]
 

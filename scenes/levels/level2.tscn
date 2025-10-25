@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://h02t0hsom8sh" path="res://scenes/game_objects/main_character.tscn" id="3_8i1lk"]
 [ext_resource type="PackedScene" uid="uid://bc0ov82y5aeda" path="res://scenes/game_objects/collectible_melon.tscn" id="4_hgky1"]
 [ext_resource type="PackedScene" uid="uid://n7x3crpdp5um" path="res://scenes/game_objects/finish.tscn" id="6_hkuam"]
-[ext_resource type="PackedScene" uid="uid://rukhcfl4rwli" path="res://scenes/menu/main_menu.tscn" id="7_f3b2k"]
+[ext_resource type="PackedScene" uid="uid://rukhcfl4rwli" path="res://scenes/ui/main_menu.tscn" id="7_f3b2k"]
 [ext_resource type="Script" uid="uid://l00pnkmdjo74" path="res://scenes/game_objects/fall_area.gd" id="8_sqrei"]
 [ext_resource type="PackedScene" uid="uid://dhkc7s21ngmpj" path="res://scenes/game_objects/enemy_duck.tscn" id="9_hgky1"]
-[ext_resource type="Script" uid="uid://c0c7mmwrubhnu" path="res://scenes/levels/game_manager.gd" id="9_yhrca"]
-[ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://assets/menu/Jersey10-Regular.ttf" id="10_4eecq"]
+[ext_resource type="Script" uid="uid://bqq8fgpr46xud" path="res://scenes/levels/game_manager.gd" id="9_yhrca"]
+[ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://assets/ui/PixelOperator-Bold.ttf" id="12_hgky1"]
 [ext_resource type="Texture2D" uid="uid://04iomadu77a4" path="res://assets/game_elements/heart_health.png" id="14_b4tpv"]
-[ext_resource type="PackedScene" uid="uid://bqf6qtnr51c0n" path="res://scenes/levels/pause.tscn" id="16_sqrei"]
+[ext_resource type="PackedScene" uid="uid://bqf6qtnr51c0n" path="res://scenes/ui/pause.tscn" id="16_sqrei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("2_gycjm")
@@ -260,7 +260,7 @@ region = Rect2(0, 16, 24, 8)
 atlas = ExtResource("14_b4tpv")
 region = Rect2(0, 0, 24, 8)
 
-[node name="Node" type="Node"]
+[node name="Level2" type="Node"]
 
 [node name="SceneObjects" type="Node" parent="."]
 
@@ -371,20 +371,15 @@ script = ExtResource("8_sqrei")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/FallArea"]
 shape = SubResource("WorldBoundaryShape2D_76toy")
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
-unique_name_in_owner = true
-script = ExtResource("9_yhrca")
-hearts = [NodePath("../UI/HeartsPanel/Heart1"), NodePath("../UI/HeartsPanel/Heart2"), NodePath("../UI/HeartsPanel/Heart3")]
-
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="UI"]
+[node name="PointsPanel" type="Panel" parent="UI"]
 offset_left = 16.0
-offset_top = 17.0
-offset_right = 208.0
-offset_bottom = 81.0
+offset_top = 16.0
+offset_right = 176.0
+offset_bottom = 88.0
 
-[node name="PointsLabel" type="Label" parent="UI/Panel"]
+[node name="PointsLabel" type="Label" parent="UI/PointsPanel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -392,8 +387,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("10_4eecq")
-theme_override_font_sizes/font_size = 42
+theme_override_fonts/font = ExtResource("12_hgky1")
+theme_override_font_sizes/font_size = 32
 text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -460,5 +455,10 @@ texture = SubResource("AtlasTexture_sqrei")
 stretch_mode = 4
 
 [node name="Pause" parent="UI" instance=ExtResource("16_sqrei")]
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+unique_name_in_owner = true
+script = ExtResource("9_yhrca")
+hearts = [NodePath("../UI/HeartsPanel/Heart1"), NodePath("../UI/HeartsPanel/Heart2"), NodePath("../UI/HeartsPanel/Heart3")]
 
 [connection signal="body_entered" from="SceneObjects/FallArea" to="SceneObjects/FallArea" method="_on_body_entered"]

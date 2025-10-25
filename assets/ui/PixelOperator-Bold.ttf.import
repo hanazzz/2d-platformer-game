@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bn0212nw3j40m"
-path="res://.godot/imported/Jersey10-Regular.ttf-dced215b01803b0bfdf29501d3bc836e.fontdata"
+uid="uid://bfm4pdj6ogqh0"
+path="res://.godot/imported/PixelOperator-Bold.ttf-ba57f0875a7ace28fa41835d179f99b6.fontdata"
 
 [deps]
 
-source_file="res://assets/menu/Jersey10-Regular.ttf"
-dest_files=["res://.godot/imported/Jersey10-Regular.ttf-dced215b01803b0bfdf29501d3bc836e.fontdata"]
+source_file="res://assets/ui/PixelOperator-Bold.ttf"
+dest_files=["res://.godot/imported/PixelOperator-Bold.ttf-ba57f0875a7ace28fa41835d179f99b6.fontdata"]
 
 [params]
 

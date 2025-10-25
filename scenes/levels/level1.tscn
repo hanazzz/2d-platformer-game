@@ -7,13 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://d2rcmiq31dr2h" path="res://assets/backgrounds/bg_pine_forest_parallax/bg_morning_layer4.png" id="3_ps2vj"]
 [ext_resource type="Texture2D" uid="uid://c6s23fgjm8f7y" path="res://assets/backgrounds/bg_pine_forest_parallax/bg_morning_layer2.png" id="4_sbmf2"]
 [ext_resource type="PackedScene" uid="uid://pghoqeurj5n4" path="res://scenes/game_objects/collectible_cherry.tscn" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://c0c7mmwrubhnu" path="res://scenes/levels/game_manager.gd" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://bqq8fgpr46xud" path="res://scenes/levels/game_manager.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://n7x3crpdp5um" path="res://scenes/game_objects/finish.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://cc7qenpvtlvvh" path="res://scenes/levels/level2.tscn" id="6_ejswk"]
 [ext_resource type="PackedScene" uid="uid://sbxq1xbti2sh" path="res://scenes/game_objects/enemy_mushroom.tscn" id="7_d3jkd"]
-[ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://assets/menu/Jersey10-Regular.ttf" id="8_bbk5w"]
 [ext_resource type="Texture2D" uid="uid://04iomadu77a4" path="res://assets/game_elements/heart_health.png" id="9_conm7"]
-[ext_resource type="PackedScene" uid="uid://bqf6qtnr51c0n" path="res://scenes/levels/pause.tscn" id="14_jprdt"]
+[ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://assets/ui/PixelOperator-Bold.ttf" id="11_nkeig"]
+[ext_resource type="PackedScene" uid="uid://bqf6qtnr51c0n" path="res://scenes/ui/pause.tscn" id="14_jprdt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bbk5w"]
 texture = ExtResource("2_h2yge")
@@ -237,7 +237,7 @@ region = Rect2(16, 16, 8, 8)
 atlas = ExtResource("9_conm7")
 region = Rect2(16, 16, 8, 8)
 
-[node name="Node" type="Node"]
+[node name="Level1" type="Node"]
 
 [node name="SceneObjects" type="Node" parent="."]
 
@@ -360,17 +360,12 @@ position = Vector2(2280, 600)
 position = Vector2(2448, 592)
 target_level = ExtResource("6_ejswk")
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
-unique_name_in_owner = true
-script = ExtResource("6_7mycd")
-hearts = [NodePath("../UI/HeartsPanel/Heart1"), NodePath("../UI/HeartsPanel/Heart2"), NodePath("../UI/HeartsPanel/Heart3")]
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="PointsPanel" type="Panel" parent="UI"]
 offset_left = 16.0
 offset_top = 16.0
-offset_right = 208.0
+offset_right = 176.0
 offset_bottom = 88.0
 
 [node name="PointsLabel" type="Label" parent="UI/PointsPanel"]
@@ -381,8 +376,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("8_bbk5w")
-theme_override_font_sizes/font_size = 42
+theme_override_fonts/font = ExtResource("11_nkeig")
+theme_override_font_sizes/font_size = 32
 text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -513,5 +508,9 @@ layout_mode = 2
 texture = SubResource("AtlasTexture_jprdt")
 expand_mode = 2
 
-theme_override_font_sizes/font_size = 42
 [node name="Pause" parent="UI" instance=ExtResource("14_jprdt")]
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+unique_name_in_owner = true
+script = ExtResource("6_7mycd")
+hearts = [NodePath("../UI/HeartsPanel/Heart1"), NodePath("../UI/HeartsPanel/Heart2"), NodePath("../UI/HeartsPanel/Heart3")]
