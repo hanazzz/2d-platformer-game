@@ -10,15 +10,16 @@ config_version=5
 
 [application]
 
-config/name="2D Platformer Game via Coco Code"
+config/name="2D Platformer Game"
 run/main_scene="uid://rukhcfl4rwli"
 config/features=PackedStringArray("4.5", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://cmd4mc2kj63ss"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 window/custom_font=""
 
 [editor]
@@ -66,5 +67,10 @@ pause={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
 environment/defaults/default_clear_color=Color(0.10374347, 0.103743546, 0.103743516, 1)
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/stretch/mode="canvas_items"
+2d/stretch/scale_mode="fractional"
+2d/icon="res://icon.svg"

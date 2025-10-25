@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d24iin8i7bqys"]
+[gd_scene load_steps=24 format=3 uid="uid://d24iin8i7bqys"]
 
 [ext_resource type="Texture2D" uid="uid://bblf1on51baqo" path="res://assets/backgrounds/bg_green.png" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://0dlns3v7hide" path="res://assets/terrain/Terrain (16x16).png" id="2_h2yge"]
@@ -13,8 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://sbxq1xbti2sh" path="res://scenes/game_objects/enemy_mushroom.tscn" id="7_d3jkd"]
 [ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://assets/menu/Jersey10-Regular.ttf" id="8_bbk5w"]
 [ext_resource type="Texture2D" uid="uid://04iomadu77a4" path="res://assets/game_elements/heart_health.png" id="9_conm7"]
-[ext_resource type="Script" uid="uid://ct47vjmb45rhm" path="res://scenes/levels/pause.gd" id="11_nfihu"]
-[ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://assets/menu/PixelOperator-Bold.ttf" id="11_nkeig"]
+[ext_resource type="PackedScene" uid="uid://bqf6qtnr51c0n" path="res://scenes/levels/pause.tscn" id="14_jprdt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bbk5w"]
 texture = ExtResource("2_h2yge")
@@ -238,36 +237,6 @@ region = Rect2(16, 16, 8, 8)
 atlas = ExtResource("9_conm7")
 region = Rect2(16, 16, 8, 8)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfihu"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgguw"]
-bg_color = Color(0.14044744, 0.14044744, 0.14044744, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jprdt"]
-bg_color = Color(0.88235295, 0.88235295, 0.88235295, 0.8627451)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ps2vj"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbmf2"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
 [node name="Node" type="Node"]
 
 [node name="SceneObjects" type="Node" parent="."]
@@ -331,58 +300,64 @@ position = Vector2(48, 33)
 
 [node name="Camera2D" type="Camera2D" parent="SceneObjects/CharacterBody2D"]
 position = Vector2(20, 15)
-zoom = Vector2(0.9, 0.9)
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="EnemiesGroup" type="Node" parent="SceneObjects"]
 
 [node name="EnemyMushroom1" parent="SceneObjects/EnemiesGroup" instance=ExtResource("7_d3jkd")]
-position = Vector2(408, -88)
+position = Vector2(408, -80)
 
 [node name="EnemyMushroom2" parent="SceneObjects/EnemiesGroup" instance=ExtResource("7_d3jkd")]
-position = Vector2(549, -88)
+position = Vector2(552, -80)
 
 [node name="EnemyMushroom3" parent="SceneObjects/EnemiesGroup" instance=ExtResource("7_d3jkd")]
-position = Vector2(668, 344)
+position = Vector2(672, 352)
+
+[node name="EnemyMushroom4" parent="SceneObjects/EnemiesGroup" instance=ExtResource("7_d3jkd")]
+position = Vector2(2128, 592)
+
+[node name="EnemyMushroom5" parent="SceneObjects/EnemiesGroup" instance=ExtResource("7_d3jkd")]
+position = Vector2(2128, 552)
 
 [node name="CollectiblesGroup" type="Node" parent="SceneObjects"]
 
 [node name="Collectible1" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("5_lquwl")]
-position = Vector2(424, 480)
+position = Vector2(440, 496)
 
 [node name="Collectible2" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("5_lquwl")]
-position = Vector2(960, 576)
+position = Vector2(976, 592)
 
 [node name="Collectible3" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("5_lquwl")]
-position = Vector2(744, -96)
+position = Vector2(760, -80)
 
 [node name="Collectible5" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("5_lquwl")]
-position = Vector2(464, -96)
+position = Vector2(480, -80)
 
 [node name="Collectible4" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("5_lquwl")]
-position = Vector2(1088, 0)
+position = Vector2(1104, 16)
 
 [node name="Collectible7" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("5_lquwl")]
-position = Vector2(1664, -48)
+position = Vector2(1680, -32)
 
 [node name="Collectible8" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("5_lquwl")]
-position = Vector2(1952, -48)
+position = Vector2(1968, -32)
 
 [node name="Collectible9" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("5_lquwl")]
-position = Vector2(2456, -184)
+position = Vector2(2472, -168)
 
 [node name="Collectible10" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("5_lquwl")]
-position = Vector2(2240, -48)
+position = Vector2(2256, -32)
 
 [node name="Collectible11" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("5_lquwl")]
-position = Vector2(2024, 528)
+position = Vector2(2040, 544)
 
 [node name="Collectible12" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("5_lquwl")]
-position = Vector2(2264, 584)
+position = Vector2(2280, 600)
 
 [node name="Finish" parent="SceneObjects" instance=ExtResource("6_272bh")]
-position = Vector2(2446, 583)
+position = Vector2(2448, 592)
 target_level = ExtResource("6_ejswk")
 
 [node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
@@ -538,78 +513,5 @@ layout_mode = 2
 texture = SubResource("AtlasTexture_jprdt")
 expand_mode = 2
 
-[node name="Pause" type="Node" parent="UI"]
-script = ExtResource("11_nfihu")
-
-[node name="PauseMenu" type="Panel" parent="UI/Pause"]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GamePaused" type="Label" parent="UI/Pause/PauseMenu"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -202.5
-offset_top = 80.0
-offset_right = 202.5
-offset_bottom = 159.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("11_nkeig")
-theme_override_font_sizes/font_size = 112
-text = "GAME PAUSED"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Pause/PauseMenu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -191.125
-offset_top = -52.0
-offset_right = 191.125
-offset_bottom = 188.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 50
-
-[node name="Resume" type="Button" parent="UI/Pause/PauseMenu/VBoxContainer"]
-process_mode = 3
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.056291595, 0.056291595, 0.05629161, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_nkeig")
 theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = SubResource("StyleBoxFlat_nfihu")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_lgguw")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jprdt")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ps2vj")
-text = "Resume"
-
-[node name="ExitToMenu" type="Button" parent="UI/Pause/PauseMenu/VBoxContainer"]
-process_mode = 3
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.056291595, 0.056291595, 0.05629161, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_nkeig")
-theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = SubResource("StyleBoxFlat_sbmf2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_lgguw")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jprdt")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ps2vj")
-text = "Exit to Main Menu"
-
-[connection signal="pressed" from="UI/Pause/PauseMenu/VBoxContainer/Resume" to="UI/Pause" method="_on_resume_pressed"]
-[connection signal="pressed" from="UI/Pause/PauseMenu/VBoxContainer/ExitToMenu" to="UI/Pause" method="_on_exit_to_menu_pressed"]
+[node name="Pause" parent="UI" instance=ExtResource("14_jprdt")]

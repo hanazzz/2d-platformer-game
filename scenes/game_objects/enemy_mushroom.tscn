@@ -151,20 +151,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mq0oc"]
-radius = 16.0
-height = 42.0
+radius = 17.0
+height = 44.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_arb6b"]
 radius = 18.0
-height = 44.0
+height = 46.0
 
 [node name="EnemyMushroom" type="RigidBody2D"]
 script = ExtResource("1_bnqwj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(12, 12)
-scale = Vector2(1.7, 1.7)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3oqy1")
 animation = &"hit"
 autoplay = "default"
@@ -172,15 +171,16 @@ frame = 4
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(12, 23)
+position = Vector2(0, 13)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_mq0oc")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(12, 22)
 
 [node name="AttackCollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 12)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_arb6b")
+debug_color = Color(0.765048, 0.43831128, 0.27365398, 0.41960785)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
