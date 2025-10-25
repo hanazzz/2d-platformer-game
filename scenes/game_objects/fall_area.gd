@@ -7,10 +7,10 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
-# Called when plauer touches fall area. Restarts player position.
+# Called when player touches fall area. Restarts entire level.
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "CharacterBody2D":
 		get_tree().reload_current_scene()

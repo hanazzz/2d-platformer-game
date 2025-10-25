@@ -1,10 +1,10 @@
 [gd_scene load_steps=18 format=3 uid="uid://rukhcfl4rwli"]
 
-[ext_resource type="Script" uid="uid://6382eyvu3rmh" path="res://scenes/menu/main_menu.gd" id="1_bqqt6"]
-[ext_resource type="Texture2D" uid="uid://bk737hwrium3" path="res://assets/menu/bg_main_menu.png" id="2_wu84c"]
-[ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://assets/menu/Jersey10-Regular.ttf" id="4_wu84c"]
-[ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://assets/menu/PixelOperator-Bold.ttf" id="5_8ln24"]
-[ext_resource type="Texture2D" uid="uid://d3k7i0ts1nrtf" path="res://assets/menu/BlackButtons.png" id="5_hj162"]
+[ext_resource type="Script" uid="uid://6382eyvu3rmh" path="res://scenes/ui/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://bk737hwrium3" path="res://assets/ui/bg_main_menu.png" id="2_wu84c"]
+[ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://assets/ui/Jersey10-Regular.ttf" id="4_wu84c"]
+[ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://assets/ui/PixelOperator-Bold.ttf" id="5_8ln24"]
+[ext_resource type="Texture2D" uid="uid://d3k7i0ts1nrtf" path="res://assets/ui/BlackButtons.png" id="5_hj162"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ln24"]
 texture = ExtResource("2_wu84c")

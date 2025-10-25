@@ -131,14 +131,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oxnvh"]
-height = 29.999998
+radius = 8.0
+height = 32.0
 
 [node name="Collectible" type="Area2D"]
 script = ExtResource("1_461nl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(16, 16)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_b6awt")
 autoplay = "default"
@@ -146,7 +146,6 @@ frame = 13
 frame_progress = 0.6806023
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 16)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_oxnvh")
 

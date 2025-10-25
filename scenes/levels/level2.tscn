@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cc7qenpvtlvvh"]
+[gd_scene load_steps=22 format=3 uid="uid://cc7qenpvtlvvh"]
 
 [ext_resource type="Texture2D" uid="uid://flv84x01kodo" path="res://assets/backgrounds/bg_purple.png" id="1_oyk6k"]
 [ext_resource type="Texture2D" uid="uid://d0pagpjc643n" path="res://assets/backgrounds/bg_pine_forest_parallax/bg_morning_layer6.png" id="1_sqrei"]
@@ -7,16 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://c6s23fgjm8f7y" path="res://assets/backgrounds/bg_pine_forest_parallax/bg_morning_layer2.png" id="3_4eecq"]
 [ext_resource type="PackedScene" uid="uid://h02t0hsom8sh" path="res://scenes/game_objects/main_character.tscn" id="3_8i1lk"]
 [ext_resource type="PackedScene" uid="uid://bc0ov82y5aeda" path="res://scenes/game_objects/collectible_melon.tscn" id="4_hgky1"]
-[ext_resource type="Script" uid="uid://y47muba3yjgu" path="res://scenes/game_objects/collectible_melon.gd" id="5_b4tpv"]
 [ext_resource type="PackedScene" uid="uid://n7x3crpdp5um" path="res://scenes/game_objects/finish.tscn" id="6_hkuam"]
-[ext_resource type="PackedScene" uid="uid://rukhcfl4rwli" path="res://scenes/menu/main_menu.tscn" id="7_f3b2k"]
+[ext_resource type="PackedScene" uid="uid://rukhcfl4rwli" path="res://scenes/ui/main_menu.tscn" id="7_f3b2k"]
 [ext_resource type="Script" uid="uid://l00pnkmdjo74" path="res://scenes/game_objects/fall_area.gd" id="8_sqrei"]
 [ext_resource type="PackedScene" uid="uid://dhkc7s21ngmpj" path="res://scenes/game_objects/enemy_duck.tscn" id="9_hgky1"]
-[ext_resource type="Script" uid="uid://c0c7mmwrubhnu" path="res://scenes/levels/game_manager.gd" id="9_yhrca"]
-[ext_resource type="FontFile" uid="uid://bn0212nw3j40m" path="res://assets/menu/Jersey10-Regular.ttf" id="10_4eecq"]
-[ext_resource type="Script" uid="uid://ct47vjmb45rhm" path="res://scenes/levels/pause.gd" id="11_8i1lk"]
-[ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://assets/menu/PixelOperator-Bold.ttf" id="12_hgky1"]
+[ext_resource type="Script" uid="uid://bqq8fgpr46xud" path="res://scenes/levels/game_manager.gd" id="9_yhrca"]
+[ext_resource type="FontFile" uid="uid://bfm4pdj6ogqh0" path="res://assets/ui/PixelOperator-Bold.ttf" id="12_hgky1"]
 [ext_resource type="Texture2D" uid="uid://04iomadu77a4" path="res://assets/game_elements/heart_health.png" id="14_b4tpv"]
+[ext_resource type="PackedScene" uid="uid://bqf6qtnr51c0n" path="res://scenes/ui/pause.tscn" id="16_sqrei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("2_gycjm")
@@ -250,36 +248,6 @@ sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_76toy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4tpv"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkuam"]
-bg_color = Color(0.14044744, 0.14044744, 0.14044744, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3b2k"]
-bg_color = Color(0.88235295, 0.88235295, 0.88235295, 0.8627451)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sqrei"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhrca"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_hkuam"]
 atlas = ExtResource("14_b4tpv")
 region = Rect2(0, 32, 24, 8)
@@ -292,7 +260,7 @@ region = Rect2(0, 16, 24, 8)
 atlas = ExtResource("14_b4tpv")
 region = Rect2(0, 0, 24, 8)
 
-[node name="Node" type="Node"]
+[node name="Level2" type="Node"]
 
 [node name="SceneObjects" type="Node" parent="."]
 
@@ -354,47 +322,46 @@ position = Vector2(24, 560)
 
 [node name="Camera2D" type="Camera2D" parent="SceneObjects/CharacterBody2D"]
 position = Vector2(20, 15)
-zoom = Vector2(0.9, 0.9)
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="EnemiesGroup" type="Node" parent="SceneObjects"]
 
 [node name="EnemyDuck1" parent="SceneObjects/EnemiesGroup" instance=ExtResource("9_hgky1")]
-position = Vector2(664, 88)
+position = Vector2(700, 112)
 
 [node name="EnemyDuck2" parent="SceneObjects/EnemiesGroup" instance=ExtResource("9_hgky1")]
-position = Vector2(848, -104)
+position = Vector2(848, -80)
 
 [node name="EnemyDuck3" parent="SceneObjects/EnemiesGroup" instance=ExtResource("9_hgky1")]
-position = Vector2(912, 472)
+position = Vector2(936, 496)
 
 [node name="CollectiblesGroup" type="Node" parent="SceneObjects"]
 
 [node name="Collectible1" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("4_hgky1")]
-position = Vector2(8, -8)
-script = ExtResource("5_b4tpv")
+position = Vector2(24, 8)
 
 [node name="Collectible2" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("4_hgky1")]
-position = Vector2(368, 432)
+position = Vector2(384, 448)
 
 [node name="Collectible3" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("4_hgky1")]
-position = Vector2(1072, 560)
+position = Vector2(1088, 576)
 
 [node name="Collectible4" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("4_hgky1")]
-position = Vector2(1280, 440)
+position = Vector2(1296, 456)
 
 [node name="Collectible5" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("4_hgky1")]
-position = Vector2(1520, 496)
+position = Vector2(1536, 512)
 
 [node name="Collectible6" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("4_hgky1")]
-position = Vector2(1736, -136)
+position = Vector2(1752, -120)
 
 [node name="Collectible7" parent="SceneObjects/CollectiblesGroup" instance=ExtResource("4_hgky1")]
-position = Vector2(2336, 480)
+position = Vector2(2352, 496)
 
 [node name="Finish" parent="SceneObjects" instance=ExtResource("6_hkuam")]
-position = Vector2(2445, -233)
+position = Vector2(2448, -224)
 target_level = ExtResource("7_f3b2k")
 
 [node name="FallArea" type="Area2D" parent="SceneObjects"]
@@ -404,20 +371,15 @@ script = ExtResource("8_sqrei")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/FallArea"]
 shape = SubResource("WorldBoundaryShape2D_76toy")
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
-unique_name_in_owner = true
-script = ExtResource("9_yhrca")
-hearts = [NodePath("../UI/HeartsPanel/Heart1"), NodePath("../UI/HeartsPanel/Heart2"), NodePath("../UI/HeartsPanel/Heart3")]
-
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="UI"]
+[node name="PointsPanel" type="Panel" parent="UI"]
 offset_left = 16.0
-offset_top = 17.0
-offset_right = 208.0
-offset_bottom = 81.0
+offset_top = 16.0
+offset_right = 176.0
+offset_bottom = 88.0
 
-[node name="PointsLabel" type="Label" parent="UI/Panel"]
+[node name="PointsLabel" type="Label" parent="UI/PointsPanel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -425,84 +387,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("10_4eecq")
-theme_override_font_sizes/font_size = 42
+theme_override_fonts/font = ExtResource("12_hgky1")
+theme_override_font_sizes/font_size = 32
 text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Pause" type="Node" parent="UI"]
-script = ExtResource("11_8i1lk")
-
-[node name="PauseMenu" type="Panel" parent="UI/Pause"]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GamePaused" type="Label" parent="UI/Pause/PauseMenu"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -202.5
-offset_top = 80.0
-offset_right = 202.5
-offset_bottom = 159.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("12_hgky1")
-theme_override_font_sizes/font_size = 112
-text = "GAME PAUSED"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Pause/PauseMenu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -191.125
-offset_top = -52.0
-offset_right = 191.125
-offset_bottom = 188.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 50
-
-[node name="Resume" type="Button" parent="UI/Pause/PauseMenu/VBoxContainer"]
-process_mode = 3
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.056291595, 0.056291595, 0.05629161, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_hgky1")
-theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = SubResource("StyleBoxFlat_b4tpv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hkuam")
-theme_override_styles/hover = SubResource("StyleBoxFlat_f3b2k")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sqrei")
-text = "Resume"
-
-[node name="ExitToMenu" type="Button" parent="UI/Pause/PauseMenu/VBoxContainer"]
-process_mode = 3
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.056291595, 0.056291595, 0.05629161, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_hgky1")
-theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = SubResource("StyleBoxFlat_yhrca")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hkuam")
-theme_override_styles/hover = SubResource("StyleBoxFlat_f3b2k")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sqrei")
-text = "Exit to Main Menu"
 
 [node name="HeartsPanel" type="Panel" parent="UI"]
 anchors_preset = 1
@@ -565,6 +454,11 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_sqrei")
 stretch_mode = 4
 
+[node name="Pause" parent="UI" instance=ExtResource("16_sqrei")]
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+unique_name_in_owner = true
+script = ExtResource("9_yhrca")
+hearts = [NodePath("../UI/HeartsPanel/Heart1"), NodePath("../UI/HeartsPanel/Heart2"), NodePath("../UI/HeartsPanel/Heart3")]
+
 [connection signal="body_entered" from="SceneObjects/FallArea" to="SceneObjects/FallArea" method="_on_body_entered"]
-[connection signal="pressed" from="UI/Pause/PauseMenu/VBoxContainer/Resume" to="UI/Pause" method="_on_resume_pressed"]
-[connection signal="pressed" from="UI/Pause/PauseMenu/VBoxContainer/ExitToMenu" to="UI/Pause" method="_on_exit_to_menu_pressed"]
