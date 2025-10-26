@@ -5,9 +5,8 @@ This is my first project made using Godot! It's a simple 2D platformer.
 
 ## Demo
 
-![Demo GIF](https://github.com/user-attachments/assets/393d458f-f71a-4b98-b427-6655e5208958)  
+![Demo GIF](https://github.com/user-attachments/assets/9e5b6a25-c619-4175-86df-64e6ce40df59)  
 🚀 [Live demo](https://hanazzz.itch.io/my-first-platformer)
-
 
 ## Description
 
@@ -27,9 +26,9 @@ This is my first project made using Godot! It's a simple 2D platformer.
 
 - ~~Double jump~~ (added: 10/18/25)
 - ~~One-way collision on platforms~~ (added: 10/18/25)
-- Player animation when taking damage
+- ~~Player animation when taking damage~~ (added: 10/25/25)
+- ~~Enemy animation when destroyed~~ (added: 10/25/25)
 - Player animation when destroyed
-- Enemy animation when destroyed
 - Show total possible number of points on level (e.g. Points: 0/10)
 - Track player lives between levels
 - Track player points between levels and show total at end
