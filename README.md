@@ -3,11 +3,19 @@
 
 This is my first project made using Godot! It's a simple 2D platformer.
 
+## Table of Contents
+- [Demo](#demo)
+- [Description](#description)
+- [Features](#features)
+- [Possible Future Features](#possible-future-features)
+- [Acknowledgments](#acknowledgments)
+
 
 ## Demo
 
+🕹️ [Try the live demo](https://hanazzz.itch.io/my-first-platformer)
+
 ![Demo GIF](https://github.com/user-attachments/assets/9e5b6a25-c619-4175-86df-64e6ce40df59)  
-🚀 [Live demo](https://hanazzz.itch.io/my-first-platformer)
 
 
 ## Description
